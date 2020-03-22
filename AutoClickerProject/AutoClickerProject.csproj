@@ -49,10 +49,16 @@
     <Compile Include="Hooks\Keyboard.cs" />
     <Compile Include="Hooks\Mouse.cs" />
     <Compile Include="Data\Script.cs" />
-    <Compile Include="UserControl.cs">
+    <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl.Designer.cs">
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControl.Designer.cs">
       <DependentUpon>UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -66,7 +72,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl.resx">
+    <EmbeddedResource Include="Forms\UserControl.resx">
       <DependentUpon>UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
