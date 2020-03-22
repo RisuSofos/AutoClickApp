@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoClickerProject.Hooks;
+using AutoClickerProject.ScriptedActions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,15 @@ namespace AutoClickerProject
         public UserControl()
         {
             InitializeComponent();
+        }
+
+        public async Task RunScript()
+        {
+            foreach (var action in Script.GetAllActions())
+            {
+                DelayTimer.Interval = action.Delay;
+                if (action is MouseAction) ;
+            }
         }
     }
 }

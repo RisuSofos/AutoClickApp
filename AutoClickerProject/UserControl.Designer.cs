@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ScriptView = new System.Windows.Forms.ListView();
             this.Order = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Action = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Repeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Delay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DelayTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ScriptView
@@ -98,6 +100,7 @@
         private System.Windows.Forms.ColumnHeader Action;
         private System.Windows.Forms.ColumnHeader Repeat;
         private System.Windows.Forms.ColumnHeader Delay;
+        private System.Windows.Forms.Timer DelayTimer;
     }
 }
 

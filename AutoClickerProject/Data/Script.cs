@@ -1,49 +1,49 @@
-﻿using System;
+﻿using AutoClickerProject.Hooks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoClickerProject.Script
+namespace AutoClickerProject.ScriptedActions
 {
     public class Script
     {
-        private static List<Action> _Script = new List<Action>();
+        private static List<MouseAction> _Script = new List<MouseAction>();
 
-        public static void Add(object Event, uint Repeat, double Delay)
+        public static void Add(Mouse.MouseEvents Event, Mouse.MousePoint point, uint Repeat, int Delay)
         {
-            Action action = new Action()
+            MouseAction action = new MouseAction()
             {
                 PlaceValue = (uint)_Script.Count + 1,
                 Event = Event,
+                Point = point,
                 Repeat = Repeat,
                 Delay = Delay
             };
-
             _Script.Add(action);
         }
 
-        public static List<Action> GetAllActions() => _Script;
-
-        public static Action GetAction(uint PlaceValue) => (from a in _Script where a.PlaceValue == PlaceValue select a).FirstOrDefault();
-        public static List<Action> GetAction(uint[] PlaceValue)
+        public static List<MouseAction> GetAllActions() => _Script;
+        public static MouseAction GetAction(uint PlaceValue) => (from a in _Script where a.PlaceValue == PlaceValue select a).FirstOrDefault();
+        public static List<MouseAction> GetAction(uint[] PlaceValue)
         {
-            List<Action> selection = new List<Action>();
+            List<MouseAction> selection = new List<MouseAction>();
 
-            foreach (Action x in _Script)
+            foreach (MouseAction x in _Script)
             {
                 foreach (uint y in PlaceValue) if (x.PlaceValue == y) selection.Add(x);
             }
-
             return selection;
         }
     }
 
-    public class Action 
+    public class MouseAction 
     {
         public uint PlaceValue { get; set; }
-        public object Event { get; set; }
+        public Mouse.MouseEvents Event { get; set; }
+        public Mouse.MousePoint Point { get; set; }
         public uint Repeat { get; set; }
-        public double Delay { get; set; }
+        public int Delay { get; set; }
     }
 }
