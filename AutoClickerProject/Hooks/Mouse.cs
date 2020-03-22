@@ -61,9 +61,7 @@ namespace AutoClickerProject.Hooks
         {
             MousePoint position = GetCursorPosition();
 
-            mouse_event
-                (
-                (int)value, position.X, position.Y, 0, 0);
+            mouse_event((int)value, position.X, position.Y, 0, 0);
         }
 
     }
