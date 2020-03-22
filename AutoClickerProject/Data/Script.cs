@@ -9,28 +9,35 @@ namespace AutoClickerProject.ScriptedActions
 {
     public class Script
     {
-        private static List<MouseAction> _Script = new List<MouseAction>();
-
-        public static void Add(Mouse.MouseEvents Event, Mouse.MousePoint point, uint Repeat, int Delay)
+        private static List<Action> _Script = new List<Action>();
+        public enum ActionType
         {
-            MouseAction action = new MouseAction()
+            WAIT = 1,
+            MOUSE = 2,
+            KEYBOARD = 3
+        }
+
+        public static void AddAction(object Event, object[] Mods, uint Repeat, int Delay, ActionType Type)
+        {
+            Action action = new Action()
             {
                 PlaceValue = (uint)_Script.Count + 1,
-                Event = Event,
-                Point = point,
                 Repeat = Repeat,
-                Delay = Delay
+                Delay = Delay,
+                Event = Event,
+                Mods = Mods,
+                type = Type
             };
             _Script.Add(action);
         }
-
-        public static List<MouseAction> GetAllActions() => _Script;
-        public static MouseAction GetAction(uint PlaceValue) => (from a in _Script where a.PlaceValue == PlaceValue select a).FirstOrDefault();
-        public static List<MouseAction> GetAction(uint[] PlaceValue)
+        
+        public static List<Action> GetAllActions() => _Script;
+        public static Action GetAction(uint PlaceValue) => (from a in _Script where a.PlaceValue == PlaceValue select a).FirstOrDefault();
+        public static List<Action> GetAction(uint[] PlaceValue)
         {
-            List<MouseAction> selection = new List<MouseAction>();
+            List<Action> selection = new List<Action>();
 
-            foreach (MouseAction x in _Script)
+            foreach (Action x in _Script)
             {
                 foreach (uint y in PlaceValue) if (x.PlaceValue == y) selection.Add(x);
             }
@@ -38,12 +45,13 @@ namespace AutoClickerProject.ScriptedActions
         }
     }
 
-    public class MouseAction 
+    public class Action
     {
         public uint PlaceValue { get; set; }
-        public Mouse.MouseEvents Event { get; set; }
-        public Mouse.MousePoint Point { get; set; }
         public uint Repeat { get; set; }
         public int Delay { get; set; }
+        public object Event { get; set; }
+        public object[] Mods { get; set; }
+        public Script.ActionType type { get; set; }
     }
 }

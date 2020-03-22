@@ -24,8 +24,48 @@ namespace AutoClickerProject
             foreach (var action in Script.GetAllActions())
             {
                 DelayTimer.Interval = action.Delay;
-                if (action is MouseAction) ;
+                switch (action.type) 
+                {
+                    case Script.ActionType.WAIT:
+                        break;
+                    case Script.ActionType.MOUSE:
+                        break;
+                    case Script.ActionType.KEYBOARD:
+                        break;
+                }
             }
+        }
+
+        private void AddBTN_Click(object sender, EventArgs e)
+        {
+            object Event = null;
+            object[] Mods = new object[] { };
+            Script.ActionType action = new Script.ActionType();
+            if (WaitBTN.Checked) action = Script.ActionType.WAIT;
+            else if (MouseBTN.Checked)
+            {
+
+            }
+            else if (KeyboardBTN.Checked)
+            {
+
+            }
+            Script.AddAction(Event, Mods, 1, 1, action);
+        }
+
+        private void WaitBTN_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MouseBTN_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KeyboardBTN_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
