@@ -19,18 +19,44 @@ namespace AutoClickerProject
             InitializeComponent();
         }
 
+        private static void BlankAction()
+        {
+            ScriptedActions.Action newAction = new ScriptedActions.Action
+            {
+                Delay = 10000,
+                PlaceValue = (uint)(Script.GetAllActions().Count + 1),
+                Event = null,
+                Mods = null,
+                Repeat = 3,
+                type = Script.ActionType.WAIT
+            };
+            Script.AddAction(newAction);
+        }
+
         public async Task RunScript()
         {
+            BlankAction();
             foreach (var action in Script.GetAllActions())
             {
-                DelayTimer.Interval = action.Delay;
-                switch (action.type) 
+                switch (action.type)
                 {
                     case Script.ActionType.WAIT:
+                        for (uint i = action.Repeat; i > 0; i--)
+                        {
+                            await Task.Delay(action.Delay);
+                        }
                         break;
                     case Script.ActionType.MOUSE:
+                        for (uint i = action.Repeat; i >= 0; i--)
+                        {
+
+                        }
                         break;
                     case Script.ActionType.KEYBOARD:
+                        for (uint i = action.Repeat; i >= 0; i--)
+                        {
+
+                        }
                         break;
                 }
             }
@@ -44,11 +70,11 @@ namespace AutoClickerProject
             if (WaitBTN.Checked) action = Script.ActionType.WAIT;
             else if (MouseBTN.Checked)
             {
-
+                action = Script.ActionType.MOUSE;
             }
             else if (KeyboardBTN.Checked)
             {
-
+                action = Script.ActionType.KEYBOARD;
             }
             Script.AddAction(Event, Mods, 1, 1, action);
         }

@@ -1,0 +1,10 @@
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.csprojAssemblyReference.cache
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.Properties.Resources.resources
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.UserControl.resources
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.csproj.GenerateResource.cache
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.csproj.CoreCompileInputs.cache
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\bin\Debug\AutoClickerProject.exe.config
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\bin\Debug\AutoClickerProject.exe
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\bin\Debug\AutoClickerProject.pdb
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.exe
+E:\programming\Fun\c# projects\AutoClickApp\AutoClickerProject\obj\Debug\AutoClickerProject.pdb

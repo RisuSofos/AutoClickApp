@@ -45,9 +45,24 @@
             this.TimeTBX = new System.Windows.Forms.TextBox();
             this.RepeatTBX = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PositionBOX = new System.Windows.Forms.GroupBox();
+            this.yPosTBX = new System.Windows.Forms.TextBox();
+            this.YLBL = new System.Windows.Forms.Label();
+            this.xPosTBX = new System.Windows.Forms.TextBox();
+            this.XLBL = new System.Windows.Forms.Label();
+            this.PosBlankCBOX = new System.Windows.Forms.CheckBox();
+            this.EventSelect = new System.Windows.Forms.ComboBox();
+            this.EventLBL = new System.Windows.Forms.Label();
+            this.ModLBL = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.RemoveBTN = new System.Windows.Forms.Button();
+            this.PopOutBTN = new System.Windows.Forms.Button();
+            this.InspectBTN = new System.Windows.Forms.Button();
+            this.RemoveAllBTN = new System.Windows.Forms.Button();
+            this.ClearBTN = new System.Windows.Forms.Button();
+            this.TimeCBOX = new System.Windows.Forms.CheckBox();
             this.InputTypeBOX.SuspendLayout();
+            this.PositionBOX.SuspendLayout();
             this.SuspendLayout();
             // 
             // ScriptView
@@ -65,9 +80,10 @@
             this.ScriptView.GridLines = true;
             this.ScriptView.HideSelection = false;
             this.ScriptView.Location = new System.Drawing.Point(12, 276);
+            this.ScriptView.MultiSelect = false;
             this.ScriptView.Name = "ScriptView";
             this.ScriptView.ShowGroups = false;
-            this.ScriptView.Size = new System.Drawing.Size(655, 215);
+            this.ScriptView.Size = new System.Drawing.Size(637, 215);
             this.ScriptView.TabIndex = 0;
             this.ScriptView.UseCompatibleStateImageBehavior = false;
             this.ScriptView.View = System.Windows.Forms.View.Details;
@@ -75,7 +91,7 @@
             // Order
             // 
             this.Order.Text = "#";
-            this.Order.Width = 56;
+            this.Order.Width = 38;
             // 
             // Action
             // 
@@ -99,7 +115,7 @@
             // 
             // AddBTN
             // 
-            this.AddBTN.Location = new System.Drawing.Point(12, 247);
+            this.AddBTN.Location = new System.Drawing.Point(9, 150);
             this.AddBTN.Name = "AddBTN";
             this.AddBTN.Size = new System.Drawing.Size(75, 23);
             this.AddBTN.TabIndex = 1;
@@ -157,7 +173,7 @@
             // TimeLBL
             // 
             this.TimeLBL.AutoSize = true;
-            this.TimeLBL.Location = new System.Drawing.Point(12, 78);
+            this.TimeLBL.Location = new System.Drawing.Point(6, 74);
             this.TimeLBL.Name = "TimeLBL";
             this.TimeLBL.Size = new System.Drawing.Size(55, 13);
             this.TimeLBL.TabIndex = 4;
@@ -176,36 +192,176 @@
             this.RepeatTBX.Location = new System.Drawing.Point(67, 97);
             this.RepeatTBX.MaxLength = 2;
             this.RepeatTBX.Name = "RepeatTBX";
-            this.RepeatTBX.Size = new System.Drawing.Size(20, 20);
+            this.RepeatTBX.Size = new System.Drawing.Size(39, 20);
             this.RepeatTBX.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 104);
+            this.label1.Location = new System.Drawing.Point(16, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Repeat:";
             // 
-            // textBox1
+            // PositionBOX
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 123);
-            this.textBox1.MaxLength = 15;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Visible = false;
+            this.PositionBOX.Controls.Add(this.PosBlankCBOX);
+            this.PositionBOX.Controls.Add(this.yPosTBX);
+            this.PositionBOX.Controls.Add(this.xPosTBX);
+            this.PositionBOX.Controls.Add(this.YLBL);
+            this.PositionBOX.Controls.Add(this.XLBL);
+            this.PositionBOX.Location = new System.Drawing.Point(328, 12);
+            this.PositionBOX.Name = "PositionBOX";
+            this.PositionBOX.Size = new System.Drawing.Size(180, 66);
+            this.PositionBOX.TabIndex = 10;
+            this.PositionBOX.TabStop = false;
+            this.PositionBOX.Text = "Position";
+            this.PositionBOX.Visible = false;
             // 
-            // label2
+            // yPosTBX
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Time (ms):";
-            this.label2.Visible = false;
+            this.yPosTBX.Location = new System.Drawing.Point(101, 19);
+            this.yPosTBX.MaxLength = 2;
+            this.yPosTBX.Name = "yPosTBX";
+            this.yPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.yPosTBX.TabIndex = 12;
+            // 
+            // YLBL
+            // 
+            this.YLBL.AutoSize = true;
+            this.YLBL.Location = new System.Drawing.Point(78, 22);
+            this.YLBL.Name = "YLBL";
+            this.YLBL.Size = new System.Drawing.Size(17, 13);
+            this.YLBL.TabIndex = 11;
+            this.YLBL.Text = "Y:";
+            // 
+            // xPosTBX
+            // 
+            this.xPosTBX.Location = new System.Drawing.Point(30, 19);
+            this.xPosTBX.MaxLength = 2;
+            this.xPosTBX.Name = "xPosTBX";
+            this.xPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.xPosTBX.TabIndex = 14;
+            // 
+            // XLBL
+            // 
+            this.XLBL.AutoSize = true;
+            this.XLBL.Location = new System.Drawing.Point(7, 22);
+            this.XLBL.Name = "XLBL";
+            this.XLBL.Size = new System.Drawing.Size(17, 13);
+            this.XLBL.TabIndex = 13;
+            this.XLBL.Text = "X:";
+            // 
+            // PosBlankCBOX
+            // 
+            this.PosBlankCBOX.AutoSize = true;
+            this.PosBlankCBOX.Location = new System.Drawing.Point(10, 45);
+            this.PosBlankCBOX.Name = "PosBlankCBOX";
+            this.PosBlankCBOX.Size = new System.Drawing.Size(89, 17);
+            this.PosBlankCBOX.TabIndex = 15;
+            this.PosBlankCBOX.Text = "Track Mouse";
+            this.PosBlankCBOX.UseVisualStyleBackColor = true;
+            // 
+            // EventSelect
+            // 
+            this.EventSelect.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EventSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EventSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.EventSelect.Location = new System.Drawing.Point(67, 123);
+            this.EventSelect.Name = "EventSelect";
+            this.EventSelect.Size = new System.Drawing.Size(105, 21);
+            this.EventSelect.TabIndex = 11;
+            // 
+            // EventLBL
+            // 
+            this.EventLBL.AutoSize = true;
+            this.EventLBL.Location = new System.Drawing.Point(23, 126);
+            this.EventLBL.Name = "EventLBL";
+            this.EventLBL.Size = new System.Drawing.Size(38, 13);
+            this.EventLBL.TabIndex = 12;
+            this.EventLBL.Text = "Event:";
+            // 
+            // ModLBL
+            // 
+            this.ModLBL.AutoSize = true;
+            this.ModLBL.Location = new System.Drawing.Point(177, 126);
+            this.ModLBL.Name = "ModLBL";
+            this.ModLBL.Size = new System.Drawing.Size(36, 13);
+            this.ModLBL.TabIndex = 13;
+            this.ModLBL.Text = "Mods:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox1.Items.AddRange(new object[] {
+            "some",
+            "items",
+            "to",
+            "populate",
+            "the",
+            "box"});
+            this.comboBox1.Location = new System.Drawing.Point(219, 123);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // RemoveBTN
+            // 
+            this.RemoveBTN.Location = new System.Drawing.Point(99, 247);
+            this.RemoveBTN.Name = "RemoveBTN";
+            this.RemoveBTN.Size = new System.Drawing.Size(75, 23);
+            this.RemoveBTN.TabIndex = 15;
+            this.RemoveBTN.Text = "Remove";
+            this.RemoveBTN.UseVisualStyleBackColor = true;
+            // 
+            // PopOutBTN
+            // 
+            this.PopOutBTN.Location = new System.Drawing.Point(574, 247);
+            this.PopOutBTN.Name = "PopOutBTN";
+            this.PopOutBTN.Size = new System.Drawing.Size(75, 23);
+            this.PopOutBTN.TabIndex = 16;
+            this.PopOutBTN.Text = "Pop-Out";
+            this.PopOutBTN.UseVisualStyleBackColor = true;
+            // 
+            // InspectBTN
+            // 
+            this.InspectBTN.Location = new System.Drawing.Point(18, 247);
+            this.InspectBTN.Name = "InspectBTN";
+            this.InspectBTN.Size = new System.Drawing.Size(75, 23);
+            this.InspectBTN.TabIndex = 17;
+            this.InspectBTN.Text = "Inspect Item";
+            this.InspectBTN.UseVisualStyleBackColor = true;
+            // 
+            // RemoveAllBTN
+            // 
+            this.RemoveAllBTN.Location = new System.Drawing.Point(180, 247);
+            this.RemoveAllBTN.Name = "RemoveAllBTN";
+            this.RemoveAllBTN.Size = new System.Drawing.Size(75, 23);
+            this.RemoveAllBTN.TabIndex = 18;
+            this.RemoveAllBTN.Text = "Remove All";
+            this.RemoveAllBTN.UseVisualStyleBackColor = true;
+            // 
+            // ClearBTN
+            // 
+            this.ClearBTN.Location = new System.Drawing.Point(90, 150);
+            this.ClearBTN.Name = "ClearBTN";
+            this.ClearBTN.Size = new System.Drawing.Size(75, 23);
+            this.ClearBTN.TabIndex = 19;
+            this.ClearBTN.Text = "Clear";
+            this.ClearBTN.UseVisualStyleBackColor = true;
+            // 
+            // TimeCBOX
+            // 
+            this.TimeCBOX.AutoSize = true;
+            this.TimeCBOX.Location = new System.Drawing.Point(113, 98);
+            this.TimeCBOX.Name = "TimeCBOX";
+            this.TimeCBOX.Size = new System.Drawing.Size(120, 17);
+            this.TimeCBOX.TabIndex = 20;
+            this.TimeCBOX.Text = "Repeat for time (ms)";
+            this.TimeCBOX.UseVisualStyleBackColor = true;
             // 
             // UserControl
             // 
@@ -213,9 +369,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(679, 503);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(667, 503);
+            this.Controls.Add(this.TimeCBOX);
+            this.Controls.Add(this.ClearBTN);
+            this.Controls.Add(this.RemoveAllBTN);
+            this.Controls.Add(this.InspectBTN);
+            this.Controls.Add(this.PopOutBTN);
+            this.Controls.Add(this.RemoveBTN);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ModLBL);
+            this.Controls.Add(this.EventLBL);
+            this.Controls.Add(this.EventSelect);
+            this.Controls.Add(this.PositionBOX);
             this.Controls.Add(this.RepeatTBX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TimeTBX);
@@ -231,6 +396,8 @@
             this.Text = "Auto Click Script";
             this.InputTypeBOX.ResumeLayout(false);
             this.InputTypeBOX.PerformLayout();
+            this.PositionBOX.ResumeLayout(false);
+            this.PositionBOX.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,8 +421,22 @@
         private System.Windows.Forms.TextBox TimeTBX;
         private System.Windows.Forms.TextBox RepeatTBX;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox PositionBOX;
+        private System.Windows.Forms.CheckBox PosBlankCBOX;
+        private System.Windows.Forms.TextBox yPosTBX;
+        private System.Windows.Forms.TextBox xPosTBX;
+        private System.Windows.Forms.Label YLBL;
+        private System.Windows.Forms.Label XLBL;
+        private System.Windows.Forms.ComboBox EventSelect;
+        private System.Windows.Forms.Label EventLBL;
+        private System.Windows.Forms.Label ModLBL;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button RemoveBTN;
+        private System.Windows.Forms.Button PopOutBTN;
+        private System.Windows.Forms.Button InspectBTN;
+        private System.Windows.Forms.Button RemoveAllBTN;
+        private System.Windows.Forms.Button ClearBTN;
+        private System.Windows.Forms.CheckBox TimeCBOX;
     }
 }
 

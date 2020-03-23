@@ -30,7 +30,8 @@ namespace AutoClickerProject.ScriptedActions
             };
             _Script.Add(action);
         }
-        
+        public static void AddAction(Action newAction) => _Script.Add(newAction);
+
         public static List<Action> GetAllActions() => _Script;
         public static Action GetAction(uint PlaceValue) => (from a in _Script where a.PlaceValue == PlaceValue select a).FirstOrDefault();
         public static List<Action> GetAction(uint[] PlaceValue)
