@@ -46,11 +46,12 @@
             this.RepeatTBX = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PositionBOX = new System.Windows.Forms.GroupBox();
-            this.yPosTBX = new System.Windows.Forms.TextBox();
-            this.YLBL = new System.Windows.Forms.Label();
-            this.xPosTBX = new System.Windows.Forms.TextBox();
-            this.XLBL = new System.Windows.Forms.Label();
+            this.SelectPosBTN = new System.Windows.Forms.Button();
             this.PosBlankCBOX = new System.Windows.Forms.CheckBox();
+            this.yPosTBX = new System.Windows.Forms.TextBox();
+            this.xPosTBX = new System.Windows.Forms.TextBox();
+            this.YLBL = new System.Windows.Forms.Label();
+            this.XLBL = new System.Windows.Forms.Label();
             this.EventSelect = new System.Windows.Forms.ComboBox();
             this.EventLBL = new System.Windows.Forms.Label();
             this.ModLBL = new System.Windows.Forms.Label();
@@ -61,15 +62,14 @@
             this.RemoveAllBTN = new System.Windows.Forms.Button();
             this.ClearBTN = new System.Windows.Forms.Button();
             this.TimeCBOX = new System.Windows.Forms.CheckBox();
-            this.SelectPosBTN = new System.Windows.Forms.Button();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InputTypeBOX.SuspendLayout();
             this.PositionBOX.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -167,6 +167,7 @@
             this.KeyboardBTN.TabIndex = 4;
             this.KeyboardBTN.Text = "Keyboard";
             this.KeyboardBTN.UseVisualStyleBackColor = true;
+            this.KeyboardBTN.CheckedChanged += new System.EventHandler(this.KeyboardBTN_CheckedChanged);
             // 
             // MouseBTN
             // 
@@ -229,39 +230,14 @@
             this.PositionBOX.Text = "Position";
             this.PositionBOX.Visible = false;
             // 
-            // yPosTBX
+            // SelectPosBTN
             // 
-            this.yPosTBX.Location = new System.Drawing.Point(88, 19);
-            this.yPosTBX.MaxLength = 2;
-            this.yPosTBX.Name = "yPosTBX";
-            this.yPosTBX.Size = new System.Drawing.Size(20, 20);
-            this.yPosTBX.TabIndex = 12;
-            // 
-            // YLBL
-            // 
-            this.YLBL.AutoSize = true;
-            this.YLBL.Location = new System.Drawing.Point(65, 22);
-            this.YLBL.Name = "YLBL";
-            this.YLBL.Size = new System.Drawing.Size(17, 13);
-            this.YLBL.TabIndex = 11;
-            this.YLBL.Text = "Y:";
-            // 
-            // xPosTBX
-            // 
-            this.xPosTBX.Location = new System.Drawing.Point(30, 19);
-            this.xPosTBX.MaxLength = 2;
-            this.xPosTBX.Name = "xPosTBX";
-            this.xPosTBX.Size = new System.Drawing.Size(20, 20);
-            this.xPosTBX.TabIndex = 14;
-            // 
-            // XLBL
-            // 
-            this.XLBL.AutoSize = true;
-            this.XLBL.Location = new System.Drawing.Point(7, 22);
-            this.XLBL.Name = "XLBL";
-            this.XLBL.Size = new System.Drawing.Size(17, 13);
-            this.XLBL.TabIndex = 13;
-            this.XLBL.Text = "X:";
+            this.SelectPosBTN.Location = new System.Drawing.Point(114, 17);
+            this.SelectPosBTN.Name = "SelectPosBTN";
+            this.SelectPosBTN.Size = new System.Drawing.Size(75, 23);
+            this.SelectPosBTN.TabIndex = 16;
+            this.SelectPosBTN.Text = "Select";
+            this.SelectPosBTN.UseVisualStyleBackColor = true;
             // 
             // PosBlankCBOX
             // 
@@ -272,6 +248,40 @@
             this.PosBlankCBOX.TabIndex = 15;
             this.PosBlankCBOX.Text = "Track Mouse";
             this.PosBlankCBOX.UseVisualStyleBackColor = true;
+            // 
+            // yPosTBX
+            // 
+            this.yPosTBX.Location = new System.Drawing.Point(88, 19);
+            this.yPosTBX.MaxLength = 2;
+            this.yPosTBX.Name = "yPosTBX";
+            this.yPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.yPosTBX.TabIndex = 12;
+            // 
+            // xPosTBX
+            // 
+            this.xPosTBX.Location = new System.Drawing.Point(30, 19);
+            this.xPosTBX.MaxLength = 2;
+            this.xPosTBX.Name = "xPosTBX";
+            this.xPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.xPosTBX.TabIndex = 14;
+            // 
+            // YLBL
+            // 
+            this.YLBL.AutoSize = true;
+            this.YLBL.Location = new System.Drawing.Point(65, 22);
+            this.YLBL.Name = "YLBL";
+            this.YLBL.Size = new System.Drawing.Size(17, 13);
+            this.YLBL.TabIndex = 11;
+            this.YLBL.Text = "Y:";
+            // 
+            // XLBL
+            // 
+            this.XLBL.AutoSize = true;
+            this.XLBL.Location = new System.Drawing.Point(7, 22);
+            this.XLBL.Name = "XLBL";
+            this.XLBL.Size = new System.Drawing.Size(17, 13);
+            this.XLBL.TabIndex = 13;
+            this.XLBL.Text = "X:";
             // 
             // EventSelect
             // 
@@ -373,15 +383,6 @@
             this.TimeCBOX.Text = "Repeat for time (ms)";
             this.TimeCBOX.UseVisualStyleBackColor = true;
             // 
-            // SelectPosBTN
-            // 
-            this.SelectPosBTN.Location = new System.Drawing.Point(114, 17);
-            this.SelectPosBTN.Name = "SelectPosBTN";
-            this.SelectPosBTN.Size = new System.Drawing.Size(75, 23);
-            this.SelectPosBTN.TabIndex = 16;
-            this.SelectPosBTN.Text = "Select";
-            this.SelectPosBTN.UseVisualStyleBackColor = true;
-            // 
             // MenuStrip
             // 
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -404,6 +405,24 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newScriptToolStripMenuItem
+            // 
+            this.newScriptToolStripMenuItem.Name = "newScriptToolStripMenuItem";
+            this.newScriptToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.newScriptToolStripMenuItem.Text = "New Script";
+            // 
+            // saveScriptToolStripMenuItem
+            // 
+            this.saveScriptToolStripMenuItem.Name = "saveScriptToolStripMenuItem";
+            this.saveScriptToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.saveScriptToolStripMenuItem.Text = "Save Script";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
             // supportToolStripMenuItem
             // 
             this.supportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -413,35 +432,17 @@
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.supportToolStripMenuItem.Text = "Other";
             // 
-            // newScriptToolStripMenuItem
-            // 
-            this.newScriptToolStripMenuItem.Name = "newScriptToolStripMenuItem";
-            this.newScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newScriptToolStripMenuItem.Text = "New Script";
-            // 
-            // saveScriptToolStripMenuItem
-            // 
-            this.saveScriptToolStripMenuItem.Name = "saveScriptToolStripMenuItem";
-            this.saveScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveScriptToolStripMenuItem.Text = "Save Script";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // UserControl
             // 
