@@ -61,8 +61,18 @@
             this.RemoveAllBTN = new System.Windows.Forms.Button();
             this.ClearBTN = new System.Windows.Forms.Button();
             this.TimeCBOX = new System.Windows.Forms.CheckBox();
+            this.SelectPosBTN = new System.Windows.Forms.Button();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InputTypeBOX.SuspendLayout();
             this.PositionBOX.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ScriptView
@@ -115,7 +125,7 @@
             // 
             // AddBTN
             // 
-            this.AddBTN.Location = new System.Drawing.Point(9, 150);
+            this.AddBTN.Location = new System.Drawing.Point(12, 172);
             this.AddBTN.Name = "AddBTN";
             this.AddBTN.Size = new System.Drawing.Size(75, 23);
             this.AddBTN.TabIndex = 1;
@@ -141,7 +151,7 @@
             this.InputTypeBOX.Controls.Add(this.KeyboardBTN);
             this.InputTypeBOX.Controls.Add(this.MouseBTN);
             this.InputTypeBOX.Controls.Add(this.WaitBTN);
-            this.InputTypeBOX.Location = new System.Drawing.Point(12, 12);
+            this.InputTypeBOX.Location = new System.Drawing.Point(15, 34);
             this.InputTypeBOX.Name = "InputTypeBOX";
             this.InputTypeBOX.Size = new System.Drawing.Size(284, 49);
             this.InputTypeBOX.TabIndex = 3;
@@ -151,13 +161,12 @@
             // KeyboardBTN
             // 
             this.KeyboardBTN.AutoSize = true;
-            this.KeyboardBTN.Location = new System.Drawing.Point(189, 19);
+            this.KeyboardBTN.Location = new System.Drawing.Point(189, 20);
             this.KeyboardBTN.Name = "KeyboardBTN";
             this.KeyboardBTN.Size = new System.Drawing.Size(70, 17);
             this.KeyboardBTN.TabIndex = 4;
             this.KeyboardBTN.Text = "Keyboard";
             this.KeyboardBTN.UseVisualStyleBackColor = true;
-            this.KeyboardBTN.CheckedChanged += new System.EventHandler(this.KeyboardBTN_CheckedChanged);
             // 
             // MouseBTN
             // 
@@ -173,7 +182,7 @@
             // TimeLBL
             // 
             this.TimeLBL.AutoSize = true;
-            this.TimeLBL.Location = new System.Drawing.Point(6, 74);
+            this.TimeLBL.Location = new System.Drawing.Point(9, 96);
             this.TimeLBL.Name = "TimeLBL";
             this.TimeLBL.Size = new System.Drawing.Size(55, 13);
             this.TimeLBL.TabIndex = 4;
@@ -181,7 +190,7 @@
             // 
             // TimeTBX
             // 
-            this.TimeTBX.Location = new System.Drawing.Point(67, 71);
+            this.TimeTBX.Location = new System.Drawing.Point(70, 93);
             this.TimeTBX.MaxLength = 8;
             this.TimeTBX.Name = "TimeTBX";
             this.TimeTBX.Size = new System.Drawing.Size(100, 20);
@@ -189,7 +198,7 @@
             // 
             // RepeatTBX
             // 
-            this.RepeatTBX.Location = new System.Drawing.Point(67, 97);
+            this.RepeatTBX.Location = new System.Drawing.Point(70, 119);
             this.RepeatTBX.MaxLength = 2;
             this.RepeatTBX.Name = "RepeatTBX";
             this.RepeatTBX.Size = new System.Drawing.Size(39, 20);
@@ -198,7 +207,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 100);
+            this.label1.Location = new System.Drawing.Point(19, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
@@ -206,14 +215,15 @@
             // 
             // PositionBOX
             // 
+            this.PositionBOX.Controls.Add(this.SelectPosBTN);
             this.PositionBOX.Controls.Add(this.PosBlankCBOX);
             this.PositionBOX.Controls.Add(this.yPosTBX);
             this.PositionBOX.Controls.Add(this.xPosTBX);
             this.PositionBOX.Controls.Add(this.YLBL);
             this.PositionBOX.Controls.Add(this.XLBL);
-            this.PositionBOX.Location = new System.Drawing.Point(328, 12);
+            this.PositionBOX.Location = new System.Drawing.Point(331, 34);
             this.PositionBOX.Name = "PositionBOX";
-            this.PositionBOX.Size = new System.Drawing.Size(180, 66);
+            this.PositionBOX.Size = new System.Drawing.Size(194, 66);
             this.PositionBOX.TabIndex = 10;
             this.PositionBOX.TabStop = false;
             this.PositionBOX.Text = "Position";
@@ -221,7 +231,7 @@
             // 
             // yPosTBX
             // 
-            this.yPosTBX.Location = new System.Drawing.Point(101, 19);
+            this.yPosTBX.Location = new System.Drawing.Point(88, 19);
             this.yPosTBX.MaxLength = 2;
             this.yPosTBX.Name = "yPosTBX";
             this.yPosTBX.Size = new System.Drawing.Size(20, 20);
@@ -230,7 +240,7 @@
             // YLBL
             // 
             this.YLBL.AutoSize = true;
-            this.YLBL.Location = new System.Drawing.Point(78, 22);
+            this.YLBL.Location = new System.Drawing.Point(65, 22);
             this.YLBL.Name = "YLBL";
             this.YLBL.Size = new System.Drawing.Size(17, 13);
             this.YLBL.TabIndex = 11;
@@ -268,7 +278,7 @@
             this.EventSelect.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.EventSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EventSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.EventSelect.Location = new System.Drawing.Point(67, 123);
+            this.EventSelect.Location = new System.Drawing.Point(70, 145);
             this.EventSelect.Name = "EventSelect";
             this.EventSelect.Size = new System.Drawing.Size(105, 21);
             this.EventSelect.TabIndex = 11;
@@ -276,7 +286,7 @@
             // EventLBL
             // 
             this.EventLBL.AutoSize = true;
-            this.EventLBL.Location = new System.Drawing.Point(23, 126);
+            this.EventLBL.Location = new System.Drawing.Point(26, 148);
             this.EventLBL.Name = "EventLBL";
             this.EventLBL.Size = new System.Drawing.Size(38, 13);
             this.EventLBL.TabIndex = 12;
@@ -285,7 +295,7 @@
             // ModLBL
             // 
             this.ModLBL.AutoSize = true;
-            this.ModLBL.Location = new System.Drawing.Point(177, 126);
+            this.ModLBL.Location = new System.Drawing.Point(180, 148);
             this.ModLBL.Name = "ModLBL";
             this.ModLBL.Size = new System.Drawing.Size(36, 13);
             this.ModLBL.TabIndex = 13;
@@ -303,7 +313,7 @@
             "populate",
             "the",
             "box"});
-            this.comboBox1.Location = new System.Drawing.Point(219, 123);
+            this.comboBox1.Location = new System.Drawing.Point(222, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(105, 21);
             this.comboBox1.TabIndex = 14;
@@ -346,7 +356,7 @@
             // 
             // ClearBTN
             // 
-            this.ClearBTN.Location = new System.Drawing.Point(90, 150);
+            this.ClearBTN.Location = new System.Drawing.Point(93, 172);
             this.ClearBTN.Name = "ClearBTN";
             this.ClearBTN.Size = new System.Drawing.Size(75, 23);
             this.ClearBTN.TabIndex = 19;
@@ -356,12 +366,82 @@
             // TimeCBOX
             // 
             this.TimeCBOX.AutoSize = true;
-            this.TimeCBOX.Location = new System.Drawing.Point(113, 98);
+            this.TimeCBOX.Location = new System.Drawing.Point(116, 120);
             this.TimeCBOX.Name = "TimeCBOX";
             this.TimeCBOX.Size = new System.Drawing.Size(120, 17);
             this.TimeCBOX.TabIndex = 20;
             this.TimeCBOX.Text = "Repeat for time (ms)";
             this.TimeCBOX.UseVisualStyleBackColor = true;
+            // 
+            // SelectPosBTN
+            // 
+            this.SelectPosBTN.Location = new System.Drawing.Point(114, 17);
+            this.SelectPosBTN.Name = "SelectPosBTN";
+            this.SelectPosBTN.Size = new System.Drawing.Size(75, 23);
+            this.SelectPosBTN.TabIndex = 16;
+            this.SelectPosBTN.Text = "Select";
+            this.SelectPosBTN.UseVisualStyleBackColor = true;
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.settingsToolStripMenuItem,
+            this.supportToolStripMenuItem});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(667, 24);
+            this.MenuStrip.TabIndex = 21;
+            this.MenuStrip.TabStop = true;
+            this.MenuStrip.Text = "Menu";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newScriptToolStripMenuItem,
+            this.saveScriptToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // supportToolStripMenuItem
+            // 
+            this.supportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.supportToolStripMenuItem.Text = "Other";
+            // 
+            // newScriptToolStripMenuItem
+            // 
+            this.newScriptToolStripMenuItem.Name = "newScriptToolStripMenuItem";
+            this.newScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newScriptToolStripMenuItem.Text = "New Script";
+            // 
+            // saveScriptToolStripMenuItem
+            // 
+            this.saveScriptToolStripMenuItem.Name = "saveScriptToolStripMenuItem";
+            this.saveScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveScriptToolStripMenuItem.Text = "Save Script";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // UserControl
             // 
@@ -388,7 +468,9 @@
             this.Controls.Add(this.InputTypeBOX);
             this.Controls.Add(this.AddBTN);
             this.Controls.Add(this.ScriptView);
+            this.Controls.Add(this.MenuStrip);
             this.HelpButton = true;
+            this.MainMenuStrip = this.MenuStrip;
             this.MaximizeBox = false;
             this.Name = "UserControl";
             this.ShowIcon = false;
@@ -398,6 +480,8 @@
             this.InputTypeBOX.PerformLayout();
             this.PositionBOX.ResumeLayout(false);
             this.PositionBOX.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,6 +521,15 @@
         private System.Windows.Forms.Button RemoveAllBTN;
         private System.Windows.Forms.Button ClearBTN;
         private System.Windows.Forms.CheckBox TimeCBOX;
+        private System.Windows.Forms.Button SelectPosBTN;
+        public System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newScriptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveScriptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
