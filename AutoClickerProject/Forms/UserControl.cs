@@ -17,6 +17,7 @@ namespace AutoClickerProject
         public UserControl()
         {
             InitializeComponent();
+            WaitBTN.Checked = true;
         }
 
         private static void BlankAction()
@@ -99,31 +100,43 @@ namespace AutoClickerProject
             {
                 case true:
                     foreach (Control control in this.Controls) control.Visible = Convert.ToString(control.Tag).Contains("Mouse") || control.Tag == null;
+                    EventSelect.Items.Clear();
+                    EventSelect.Items.Add("CLICK");
+                    foreach (string x in Enum.GetNames(typeof(Mouse.MouseEvents))) EventSelect.Items.Add(x);
                     break;
                 case false:
+                    EventSelect.Items.Clear();
+                    xPosTBX.Clear();
+                    yPosTBX.Clear();
+                    PosBlankCBOX.Checked = false;
                     foreach (Control control in this.Controls) control.Visible = !Convert.ToString(control.Tag).Contains("Mouse") || control.Tag != null;
                     break;
             }
         }
-
+        private readonly int[] _ModValues = new int[] { 0x10, 0x11, 0x12 };
         private void KeyboardBTN_CheckedChanged(object sender, EventArgs e)
         {
-            Array values = KeyboardHook.VKeys.GetValues(typeof(KeyboardHook.VKeys));
             switch (((RadioButton)sender).Checked)
             {
                 case true:
                     foreach (Control control in this.Controls) control.Visible = Convert.ToString(control.Tag).Contains("Key") || control.Tag == null;
                     EventSelect.Items.Clear();
-                    foreach (string x in Enum.GetNames(typeof(KeyboardHook.VKeys)))
-                    {
-                        EventSelect.Items.Add(x);
-                    }
+                    ModSelect.Items.Clear();
+                    foreach (string x in Enum.GetNames(typeof(KeyboardHook.VKeys))) EventSelect.Items.Add(x);
+                    foreach (int y in _ModValues) ModSelect.Items.Add(Enum.GetName(typeof(KeyboardHook.VKeys), y));
                     break;
                 case false:
                     EventSelect.Items.Clear();
+                    ModSelect.Items.Clear();
+                    ModItemsTBX.Clear();
                     foreach (Control control in this.Controls) control.Visible = !Convert.ToString(control.Tag).Contains("Key") || control.Tag != null;
                     break;
             }
+        }
+
+        private void ModAddBTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

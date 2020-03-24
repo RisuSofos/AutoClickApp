@@ -12,14 +12,14 @@ namespace AutoClickerProject.Hooks
         [Flags]
         public enum MouseEvents
         {
-            Move = 1,
-            LeftDown = 2,
-            LeftUp = 4,
-            RightDown = 8,
-            RightUp = 16,
-            MiddleDown = 32,
-            MiddleUp = 64,
-            Absolute = 32768
+            MOVE = 0x1,
+            LEFT_DOWN = 0x2,
+            LEFT_UP = 0x4,
+            RIGHT_DOWN = 0x8,
+            RIGHT_UP = 0x10,
+            MIDDLE_DOWN = 0x20,
+            MIDDLE_UP = 0x40,
+            ABSOLUTE = 0x8000
         }
 
         [StructLayout(LayoutKind.Sequential)]

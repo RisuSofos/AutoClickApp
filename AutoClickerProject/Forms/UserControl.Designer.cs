@@ -70,6 +70,8 @@
             this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ModItemsTBX = new System.Windows.Forms.TextBox();
+            this.ModAddBTN = new System.Windows.Forms.Button();
             this.InputTypeBOX.SuspendLayout();
             this.PositionBOX.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -136,12 +138,10 @@
             // WaitBTN
             // 
             this.WaitBTN.AutoSize = true;
-            this.WaitBTN.Checked = true;
             this.WaitBTN.Location = new System.Drawing.Point(6, 19);
             this.WaitBTN.Name = "WaitBTN";
             this.WaitBTN.Size = new System.Drawing.Size(47, 17);
             this.WaitBTN.TabIndex = 2;
-            this.WaitBTN.TabStop = true;
             this.WaitBTN.Text = "Wait";
             this.WaitBTN.UseVisualStyleBackColor = true;
             this.WaitBTN.CheckedChanged += new System.EventHandler(this.WaitBTN_CheckedChanged);
@@ -237,9 +237,9 @@
             // 
             // SelectPosBTN
             // 
-            this.SelectPosBTN.Location = new System.Drawing.Point(114, 17);
+            this.SelectPosBTN.Location = new System.Drawing.Point(142, 19);
             this.SelectPosBTN.Name = "SelectPosBTN";
-            this.SelectPosBTN.Size = new System.Drawing.Size(75, 23);
+            this.SelectPosBTN.Size = new System.Drawing.Size(46, 20);
             this.SelectPosBTN.TabIndex = 16;
             this.SelectPosBTN.Text = "Select";
             this.SelectPosBTN.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@
             this.yPosTBX.Location = new System.Drawing.Point(88, 19);
             this.yPosTBX.MaxLength = 2;
             this.yPosTBX.Name = "yPosTBX";
-            this.yPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.yPosTBX.Size = new System.Drawing.Size(38, 20);
             this.yPosTBX.TabIndex = 12;
             // 
             // xPosTBX
@@ -267,7 +267,7 @@
             this.xPosTBX.Location = new System.Drawing.Point(30, 19);
             this.xPosTBX.MaxLength = 2;
             this.xPosTBX.Name = "xPosTBX";
-            this.xPosTBX.Size = new System.Drawing.Size(20, 20);
+            this.xPosTBX.Size = new System.Drawing.Size(38, 20);
             this.xPosTBX.TabIndex = 14;
             // 
             // YLBL
@@ -329,7 +329,7 @@
             "populate",
             "the",
             "box"});
-            this.ModSelect.Location = new System.Drawing.Point(222, 145);
+            this.ModSelect.Location = new System.Drawing.Point(222, 171);
             this.ModSelect.Name = "ModSelect";
             this.ModSelect.Size = new System.Drawing.Size(105, 21);
             this.ModSelect.TabIndex = 14;
@@ -452,6 +452,25 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // ModItemsTBX
+            // 
+            this.ModItemsTBX.Location = new System.Drawing.Point(222, 145);
+            this.ModItemsTBX.Name = "ModItemsTBX";
+            this.ModItemsTBX.Size = new System.Drawing.Size(191, 20);
+            this.ModItemsTBX.TabIndex = 22;
+            this.ModItemsTBX.Tag = "Key";
+            // 
+            // ModAddBTN
+            // 
+            this.ModAddBTN.Location = new System.Drawing.Point(331, 171);
+            this.ModAddBTN.Name = "ModAddBTN";
+            this.ModAddBTN.Size = new System.Drawing.Size(82, 23);
+            this.ModAddBTN.TabIndex = 23;
+            this.ModAddBTN.Tag = "Key";
+            this.ModAddBTN.Text = "Add Mod";
+            this.ModAddBTN.UseVisualStyleBackColor = true;
+            this.ModAddBTN.Click += new System.EventHandler(this.ModAddBTN_Click);
+            // 
             // UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +478,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(667, 503);
+            this.Controls.Add(this.ModAddBTN);
+            this.Controls.Add(this.ModItemsTBX);
             this.Controls.Add(this.TimeCBOX);
             this.Controls.Add(this.ClearBTN);
             this.Controls.Add(this.RemoveAllBTN);
@@ -539,6 +560,8 @@
         private System.Windows.Forms.ToolStripMenuItem supportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.TextBox ModItemsTBX;
+        private System.Windows.Forms.Button ModAddBTN;
     }
 }
 
