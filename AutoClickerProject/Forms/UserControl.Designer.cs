@@ -55,7 +55,7 @@
             this.EventSelect = new System.Windows.Forms.ComboBox();
             this.EventLBL = new System.Windows.Forms.Label();
             this.ModLBL = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ModSelect = new System.Windows.Forms.ComboBox();
             this.RemoveBTN = new System.Windows.Forms.Button();
             this.PopOutBTN = new System.Windows.Forms.Button();
             this.InspectBTN = new System.Windows.Forms.Button();
@@ -187,6 +187,7 @@
             this.TimeLBL.Name = "TimeLBL";
             this.TimeLBL.Size = new System.Drawing.Size(55, 13);
             this.TimeLBL.TabIndex = 4;
+            this.TimeLBL.Tag = "Wait, Mouse, Key";
             this.TimeLBL.Text = "Time (ms):";
             // 
             // TimeTBX
@@ -196,6 +197,7 @@
             this.TimeTBX.Name = "TimeTBX";
             this.TimeTBX.Size = new System.Drawing.Size(100, 20);
             this.TimeTBX.TabIndex = 5;
+            this.TimeTBX.Tag = "Wait, Mouse, Key";
             // 
             // RepeatTBX
             // 
@@ -204,6 +206,7 @@
             this.RepeatTBX.Name = "RepeatTBX";
             this.RepeatTBX.Size = new System.Drawing.Size(39, 20);
             this.RepeatTBX.TabIndex = 7;
+            this.RepeatTBX.Tag = "Wait, Mouse, Key";
             // 
             // label1
             // 
@@ -212,6 +215,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
+            this.label1.Tag = "Wait, Mouse, Key";
             this.label1.Text = "Repeat:";
             // 
             // PositionBOX
@@ -227,6 +231,7 @@
             this.PositionBOX.Size = new System.Drawing.Size(194, 66);
             this.PositionBOX.TabIndex = 10;
             this.PositionBOX.TabStop = false;
+            this.PositionBOX.Tag = "Mouse";
             this.PositionBOX.Text = "Position";
             this.PositionBOX.Visible = false;
             // 
@@ -285,13 +290,13 @@
             // 
             // EventSelect
             // 
-            this.EventSelect.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.EventSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EventSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.EventSelect.Location = new System.Drawing.Point(70, 145);
             this.EventSelect.Name = "EventSelect";
             this.EventSelect.Size = new System.Drawing.Size(105, 21);
             this.EventSelect.TabIndex = 11;
+            this.EventSelect.Tag = "Mouse, Key";
             // 
             // EventLBL
             // 
@@ -300,6 +305,7 @@
             this.EventLBL.Name = "EventLBL";
             this.EventLBL.Size = new System.Drawing.Size(38, 13);
             this.EventLBL.TabIndex = 12;
+            this.EventLBL.Tag = "Mouse, Key";
             this.EventLBL.Text = "Event:";
             // 
             // ModLBL
@@ -309,24 +315,25 @@
             this.ModLBL.Name = "ModLBL";
             this.ModLBL.Size = new System.Drawing.Size(36, 13);
             this.ModLBL.TabIndex = 13;
+            this.ModLBL.Tag = "Key";
             this.ModLBL.Text = "Mods:";
             // 
-            // comboBox1
+            // ModSelect
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ModSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ModSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ModSelect.Items.AddRange(new object[] {
             "some",
             "items",
             "to",
             "populate",
             "the",
             "box"});
-            this.comboBox1.Location = new System.Drawing.Point(222, 145);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 21);
-            this.comboBox1.TabIndex = 14;
+            this.ModSelect.Location = new System.Drawing.Point(222, 145);
+            this.ModSelect.Name = "ModSelect";
+            this.ModSelect.Size = new System.Drawing.Size(105, 21);
+            this.ModSelect.TabIndex = 14;
+            this.ModSelect.Tag = "Key";
             // 
             // RemoveBTN
             // 
@@ -380,6 +387,7 @@
             this.TimeCBOX.Name = "TimeCBOX";
             this.TimeCBOX.Size = new System.Drawing.Size(120, 17);
             this.TimeCBOX.TabIndex = 20;
+            this.TimeCBOX.Tag = "Wait, Mouse, Key";
             this.TimeCBOX.Text = "Repeat for time (ms)";
             this.TimeCBOX.UseVisualStyleBackColor = true;
             // 
@@ -457,7 +465,7 @@
             this.Controls.Add(this.InspectBTN);
             this.Controls.Add(this.PopOutBTN);
             this.Controls.Add(this.RemoveBTN);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ModSelect);
             this.Controls.Add(this.ModLBL);
             this.Controls.Add(this.EventLBL);
             this.Controls.Add(this.EventSelect);
@@ -515,7 +523,7 @@
         private System.Windows.Forms.ComboBox EventSelect;
         private System.Windows.Forms.Label EventLBL;
         private System.Windows.Forms.Label ModLBL;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ModSelect;
         private System.Windows.Forms.Button RemoveBTN;
         private System.Windows.Forms.Button PopOutBTN;
         private System.Windows.Forms.Button InspectBTN;
