@@ -136,7 +136,12 @@ namespace AutoClickerProject
 
         private void ModAddBTN_Click(object sender, EventArgs e)
         {
-
+            if ((ModItemsTBX.Text == null || ModItemsTBX.Text == "") && ModSelect.SelectedItem != null) ModItemsTBX.Text = Convert.ToString(ModSelect.SelectedItem);
+            else if (ModSelect.SelectedItem != null) ModItemsTBX.Text += $" + {ModSelect.SelectedItem}";
+            else MessageBox.Show("No Modification Key to add to Mods", "Field Blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var newItems = ModSelect.Items.Cast<string>().Where(x => x != Convert.ToString(ModSelect.SelectedItem) && !ModItemsTBX.Text.Contains(Convert.ToString(x))); // x is getting the wrong string
+            ModSelect.Items.Clear();
+            foreach (var x in newItems) ModSelect.Items.Add(Convert.ToString(x));
         }
     }
 }

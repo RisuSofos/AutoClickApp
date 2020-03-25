@@ -72,6 +72,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ModItemsTBX = new System.Windows.Forms.TextBox();
             this.ModAddBTN = new System.Windows.Forms.Button();
+            this.ClearMod = new System.Windows.Forms.Button();
             this.InputTypeBOX.SuspendLayout();
             this.PositionBOX.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -471,6 +472,16 @@
             this.ModAddBTN.UseVisualStyleBackColor = true;
             this.ModAddBTN.Click += new System.EventHandler(this.ModAddBTN_Click);
             // 
+            // ClearMod
+            // 
+            this.ClearMod.Location = new System.Drawing.Point(419, 143);
+            this.ClearMod.Name = "ClearMod";
+            this.ClearMod.Size = new System.Drawing.Size(38, 23);
+            this.ClearMod.TabIndex = 24;
+            this.ClearMod.Tag = "Key";
+            this.ClearMod.Text = "clear";
+            this.ClearMod.UseVisualStyleBackColor = true;
+            // 
             // UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,6 +489,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(667, 503);
+            this.Controls.Add(this.ClearMod);
             this.Controls.Add(this.ModAddBTN);
             this.Controls.Add(this.ModItemsTBX);
             this.Controls.Add(this.TimeCBOX);
@@ -562,6 +574,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TextBox ModItemsTBX;
         private System.Windows.Forms.Button ModAddBTN;
+        private System.Windows.Forms.Button ClearMod;
     }
 }
 
