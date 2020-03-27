@@ -254,6 +254,7 @@
             this.PosBlankCBOX.TabIndex = 15;
             this.PosBlankCBOX.Text = "Track Mouse";
             this.PosBlankCBOX.UseVisualStyleBackColor = true;
+            this.PosBlankCBOX.CheckedChanged += new System.EventHandler(this.PosBlankCBOX_CheckedChanged);
             // 
             // yPosTBX
             // 
@@ -274,7 +275,7 @@
             // YLBL
             // 
             this.YLBL.AutoSize = true;
-            this.YLBL.Location = new System.Drawing.Point(65, 22);
+            this.YLBL.Location = new System.Drawing.Point(74, 22);
             this.YLBL.Name = "YLBL";
             this.YLBL.Size = new System.Drawing.Size(17, 13);
             this.YLBL.TabIndex = 11;
@@ -283,7 +284,7 @@
             // XLBL
             // 
             this.XLBL.AutoSize = true;
-            this.XLBL.Location = new System.Drawing.Point(7, 22);
+            this.XLBL.Location = new System.Drawing.Point(16, 22);
             this.XLBL.Name = "XLBL";
             this.XLBL.Size = new System.Drawing.Size(17, 13);
             this.XLBL.TabIndex = 13;
@@ -380,6 +381,7 @@
             this.ClearBTN.TabIndex = 19;
             this.ClearBTN.Text = "Clear";
             this.ClearBTN.UseVisualStyleBackColor = true;
+            this.ClearBTN.Click += new System.EventHandler(this.ClearBTN_Click);
             // 
             // TimeCBOX
             // 
@@ -457,6 +459,7 @@
             // 
             this.ModItemsTBX.Location = new System.Drawing.Point(222, 145);
             this.ModItemsTBX.Name = "ModItemsTBX";
+            this.ModItemsTBX.ReadOnly = true;
             this.ModItemsTBX.Size = new System.Drawing.Size(191, 20);
             this.ModItemsTBX.TabIndex = 22;
             this.ModItemsTBX.Tag = "Key";
@@ -481,6 +484,7 @@
             this.ClearMod.Tag = "Key";
             this.ClearMod.Text = "clear";
             this.ClearMod.UseVisualStyleBackColor = true;
+            this.ClearMod.Click += new System.EventHandler(this.ClearMod_Click);
             // 
             // UserControl
             // 
