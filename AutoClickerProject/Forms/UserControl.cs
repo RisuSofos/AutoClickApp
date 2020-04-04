@@ -92,10 +92,29 @@ namespace AutoClickerProject
                 {
 
                 }
+
+                UpdateScriptView();
+                ClearBTN_Click();
             }
             catch (InvalidCastException)
             {
                 MessageBox.Show("X or Y was not a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateScriptView()
+        {
+            ScriptView.Items.Clear();
+            foreach (var x in Script.GetAllActions())
+            {
+                ListViewItem item = new ListViewItem($"{x.PlaceValue}");
+                item.SubItems.Add((string)x.Event);
+                item.SubItems.Add($"{x.Repeat}");
+                item.SubItems.Add($"{x.Delay}");
+                string mods = "";
+                foreach (string m in x.Mods) mods += $"+ {m}";
+                item.SubItems.Add(mods);
+                ScriptView.Items.Add(item);
             }
         }
 
@@ -224,7 +243,7 @@ namespace AutoClickerProject
             }
         }
 
-        private void ClearBTN_Click(object sender, EventArgs e)
+        private void ClearBTN_Click(object sender = null, EventArgs e = null)
         {
             _CurrentSelection.Checked = false;
             _CurrentSelection.Checked = true;
